@@ -1,4 +1,4 @@
-# Sir Fire | Developer Learning Lab
+# Kibochi | Developer Learning Lab
 
 Welcome to my Developer Learning Lab.
 
