@@ -2,9 +2,11 @@
 
 Welcome to my Developer Learning Lab.
 
-This repository documents my journey of rebuilding, strengthening and expanding my software development skills through practical exercises, experiments and personal projects.
+This is a public collection of practical development projects, experiments and learning. It documents my journey of rebuilding, strengthening and expanding my software development skills through hands-on work.
 
 I'm particularly interested in web development, software engineering, IT automation and building practical solutions to everyday problems.
+
+Individual projects in this repository may evolve over time as I refine, extend or rebuild them.
 
 ## Projects
 
@@ -83,7 +85,7 @@ learning-lab/
 
 ## About Me
 
-**Developer:** Sir Fire
+**Developer:** Kibochi
 
 **GitHub:** [@sirfireprojects](https://github.com/sirfireprojects)
 
