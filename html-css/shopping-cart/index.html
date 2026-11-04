@@ -3,61 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A simple shopping cart.">
-    <title>Shopping Cart</title>
+    <meta name="description" content="A demo shopping cart with product catalogue, search, filtering and localStorage persistence.">
+    <title>Shopping Cart | Demo Store</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
 
-    <main>
-        <section class="shopping-cart">
-            <h1>Shopping Cart</h1>
+    <header class="site-header">
+        <div class="site-header__inner">
+            <div class="brand">
+                <p class="brand__eyebrow">Demo Store</p>
+                <h1 class="brand__title">Shopping Cart</h1>
+            </div>
 
-            <p>Sample items:</p>
-            <ul id="cart-items"></ul>
+            <a
+                class="cart-badge"
+                href="#cart"
+                id="cart-badge"
+                aria-label="Shopping cart, 0 items"
+            >
+                <span class="cart-badge__label">Cart</span>
+                <span id="cart-count" class="cart-badge__count">0</span>
+            </a>
+        </div>
+    </header>
 
-            <form id="add-item-form">
-                <h2>Add a Product</h2>
+    <p id="cart-announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></p>
 
-                <div class="form-group">
-                    <label for="product-name">Product Name</label>
-                    <input
-                        type="text"
-                        id="product-name"
-                        placeholder="e.g. Laptop"
-                        required
-                    >
+    <main class="page">
+        <section class="catalogue" aria-labelledby="catalogue-heading">
+            <div class="catalogue__header">
+                <div>
+                    <h2 id="catalogue-heading">Product Catalogue</h2>
+                    <p class="catalogue__intro">Browse demo products and add them to your cart. Prices are shown in Kenyan Shillings (KES).</p>
                 </div>
 
-                <div class="form-group">
-                    <label for="product-price">Price (KES)</label>
-                    <input
-                        type="number"
-                        id="product-price"
-                        placeholder="e.g. 50000"
-                        min="1"
-                        required
-                    >
+                <div class="catalogue__controls">
+                    <div class="search-field">
+                        <label for="product-search">Search products</label>
+                        <input
+                            type="search"
+                            id="product-search"
+                            placeholder="Search by name or description…"
+                            autocomplete="off"
+                        >
+                    </div>
+
+                    <div
+                        id="category-filters"
+                        class="category-filters"
+                        role="group"
+                        aria-label="Filter by category"
+                    ></div>
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <label for="product-quantity">Quantity</label>
-                    <input
-                        type="number"
-                        id="product-quantity"
-                        value="1"
-                        min="1"
-                        required
-                    >
-                </div>
-
-                <button type="submit">Add to Cart</button>
-            </form>
-
-            <h2>Total: KES <span id="cart-total">0</span></h2>
+            <p id="catalogue-status" class="status-message" role="status" hidden></p>
+            <div id="product-grid" class="product-grid"></div>
         </section>
+
+        <aside id="cart" class="cart-panel" aria-labelledby="cart-heading">
+            <div class="cart-panel__header">
+                <h2 id="cart-heading">Your Cart</h2>
+                <p class="cart-panel__note">Demo only — no payment or checkout.</p>
+            </div>
+
+            <div id="cart-empty" class="empty-state" role="status" hidden>
+                <p>Your shopping cart is empty.</p>
+                <p class="empty-state__hint">Add products from the catalogue to get started.</p>
+            </div>
+
+            <ul id="cart-items" class="cart-items"></ul>
+
+            <div class="cart-summary">
+                <div class="cart-summary__row cart-summary__row--total">
+                    <span>Total</span>
+                    <span>KES <span id="cart-total">0</span></span>
+                </div>
+                <p class="cart-summary__disclaimer">Totals update automatically. This is a learning demo and does not process payments.</p>
+            </div>
+        </aside>
     </main>
+
+    <footer class="site-footer">
+        <p>Shopping Cart demo — portfolio learning project. No real transactions.</p>
+    </footer>
 
 </body>
 </html>
